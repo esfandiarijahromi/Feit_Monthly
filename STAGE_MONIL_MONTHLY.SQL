@@ -1,3 +1,4 @@
+TRUNCATE TABLE TAGE_MONIK_MONTHLY;
 insert into  STAGE_MONIK_MONTHLY 
 WITH terhmeh AS(
 SELECT to_date('2021-03-21 00:00:00' , 'yyyy-mm-dd hh24:mi:ss') DateTime, TerminalId,FinalStatus FROM dwdb.monik s
