@@ -96,9 +96,5 @@ SELECT * FROM Pre_Contract f
 UNION 
 SELECT * FROM Cur_Contract f  
 )
-select f.*,(SELECT /*+parallel(source 4) nologging */ to_char(min(s.trdate),'yyyy/mm/dd hh24:mi:ss','nls_calendar=persian') FROM Stage_P2PACQ s 
-               WHERE substr(s.terminal,-5) =f.TerminalSerialId AND 
-                     s.TrDate >= to_date(f.csdate,'yyyy/mm/dd hh24:mi:ss','nls_calendar=persian')
-                     ) pftdate,0 as feit, cast(f.nstatetimeperhour/24 as number(38,4))as nday, 0 as feitcaltype , 
-                     CASE WHEN currentstatus >= 90 THEN 1 else 0 END cur_status
+select f.*
  from feit_contract f
