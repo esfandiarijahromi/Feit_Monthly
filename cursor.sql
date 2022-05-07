@@ -1,3 +1,5 @@
+delete Fact_Feit_Monthly t  where t.montha in (&x);
+
 DECLARE
    CURSOR feit_cursor IS SELECT * FROM fact_feit_contract;
 
