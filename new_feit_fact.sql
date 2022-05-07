@@ -3,7 +3,7 @@ SELECT * FROM (
 WITH a AS (SELECT t.terminalserialid
        , t.montha
        , t.marketerid
-       , SUM(t.nstatetimeperhour) feithour FROM fact_feit_monthly t where t.montha !='&x' 
+       , SUM(t.nstatetimeperhour) feithour FROM fact_feit_monthly t where t.montha ='&x' 
        GROUP BY t.terminalserialid,t.montha,t.marketerid)
 
 SELECT a.* , REPLACE (montha,'/','0') monthid,
