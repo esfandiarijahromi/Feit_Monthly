@@ -1,4 +1,4 @@
-drop table STAGE_forfeit_monthly purge
+drop table STAGE_forfeit_monthly purge;
 create table STAGE_forfeit_monthly
 as
 SELECT /*+parallel(source 4) nologging */ t.* , 
