@@ -10,7 +10,7 @@ SELECT /*+parallel(source 4) nologging */ t.terminalid,
                                           t.pcurrentdatetime,
                                           t.currentstatus,
                                           t.datediff from STAGE_MONIK_MONTHLY t
-                                          where t.currentdatetime>=to_date('&X','yyyy/mm/dd','nls_calendar=persian')
+                                          where t.currentdatetime>=to_date('&X','yyyy/mm/dd','nls_calendar=persian');
 commit;
 
 update a
@@ -19,7 +19,7 @@ where a.predatetime<to_date('&X','yyyy/mm/dd','nls_calendar=persian');
 
 update a
 set a.Ppredatetime='&X 00:00:00'   
-where a.Ppredatetime<'&X'
+where a.Ppredatetime<'&X';
 
 truncate table b;                        
 insert into /*+parallel(source 4) nologging */ b
