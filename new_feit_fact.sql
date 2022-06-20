@@ -13,4 +13,6 @@ SELECT a.* , REPLACE (montha,'/','0') monthid,
             WHEN a.feithour > 81 AND a.feithour <=136 THEN (105000) + (252000) + ((a.feithour-81)*12000)
             WHEN a.feithour >136 AND a.feithour <=744 THEN (105000) + (252000) + (550000) + ((a.feithour-136)*17000)
       END feit
-FROM a)
+FROM a
+where a.feithour > 24
+)
