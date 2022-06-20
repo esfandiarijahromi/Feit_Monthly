@@ -26,7 +26,13 @@ SELECT t.terminalid,
        to_char(t.predatetime ,'YYYYMMDD','NLS_CALENDAR=PERSIAN')PPREDATE,
        forfait_change(t.terminalserialid,to_char(t.predatetime ,'YYYY/MM/DD HH24:MI:ss','NLS_CALENDAR=PERSIAN') ,to_char(t.currentdatetime ,'YYYY/MM/DD HH24:MI:ss','NLS_CALENDAR=PERSIAN')) changes
        FROM STAGE_forfeit_monthly t       
-       WHERE  t.tr_count = 0), 
+       WHERE  t.tr_count = 0 and 
+       t.terminalserialid not in ('50008','50017','50029','50030','50032','50043','50055','50065','50070','50082','50094','50133','50149','50155','50156','50157','50158','50164','50188','50190',
+        '50203','50206','50221','50234','50236','50239','50248','50251','50261','50268','50279','50286','50289','50328','50357','50362','50457','50463','50486','50507','50510','50528','50529','50568','50571','50984',
+        '50986','51014','51089','51252','51284','51293','51362','51368','51369','51398','51400','51506','51665','50350','50527','50617','50581','50927')
+
+
+       ), 
        --and to_char(t.currentdatetime ,'YYYY/MM/DD HH24:MI:ss','NLS_CALENDAR=PERSIAN') <'1400/04/01 00:00:00'),
 
 --============---forfait---==============
