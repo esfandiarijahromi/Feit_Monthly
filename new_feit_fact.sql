@@ -1,3 +1,4 @@
+// x > 1401/3
 insert into new_feit_fact
 SELECT * FROM (
 WITH a AS (SELECT t.terminalserialid
