@@ -1,3 +1,5 @@
+
+// x > 1401/3
 delete Fact_Feit_Monthly t  where t.montha in (&x);
 
 DECLARE
