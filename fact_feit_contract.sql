@@ -16,15 +16,13 @@ SELECT t.terminalid,
        to_char(t.currentdatetime ,'YYYYMMDD','NLS_CALENDAR=PERSIAN') datetime,
        t.currentstatus,
        t.predatetime,
-       CASE WHEN to_char(t.predatetime,'YYYY/MM/DD HH24:MI:ss') <= '2021/03/20 00:00:00'
-         THEN '1400/01/01 00:00:00'
-       ELSE to_char(t.predatetime ,'YYYY/MM/DD HH24:MI:ss','NLS_CALENDAR=PERSIAN') END Ppredatetime,
+       t.Ppredatetime,
        t.prestatus,
        (t.datediff) statetimeperhour,
        t.TR_COUNT,
        to_char(t.currentdatetime ,'YYYYMMDD','NLS_CALENDAR=PERSIAN') PCURRENTDATE,
-       to_char(t.predatetime ,'YYYYMMDD','NLS_CALENDAR=PERSIAN')PPREDATE,
-       forfait_change(t.terminalserialid,to_char(t.predatetime ,'YYYY/MM/DD HH24:MI:ss','NLS_CALENDAR=PERSIAN') ,to_char(t.currentdatetime ,'YYYY/MM/DD HH24:MI:ss','NLS_CALENDAR=PERSIAN')) changes
+       to_char(t.predatetime ,'YYYYMMDD','NLS_CALENDAR=PERSIAN')PPREDATE
+      
        FROM STAGE_forfeit_monthly t       
        WHERE  t.tr_count = 0 and 
        t.terminalserialid not in ('50008','50017','50029','50030','50032','50043','50055','50065','50070','50082','50094','50133','50149','50155','50156','50157','50158','50164','50188','50190',
