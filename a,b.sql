@@ -26,7 +26,7 @@ insert into /*+parallel(source 4) nologging */ b
 SELECT /*+parallel(source 4) nologging */ s.trdate,
                                           substr(s.Terminal,-5) terminal,
                                           s.transactiontype,
-                                          s.amount FROM dwdb.Stage_P2PACQ_1400 s
+                                          s.amount FROM dwdb.Stage_P2PACQ_1401 s
                                        
 where substr(s.Terminal,-5) in 
 (Select distinct substr(TerminalSerialId,-5) from  STAGE_MONIK_MONTHLY)
