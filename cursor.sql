@@ -1,6 +1,6 @@
 
 /*
- x   >   1401/3 
+ x   >   '1401/4' 
 */
 delete Fact_Feit_Monthly t  where t.montha in (&x);
 
