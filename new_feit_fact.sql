@@ -1,4 +1,7 @@
-// x > 1401/3
+// x > 1401/4
+// y > 1401/5
+// delete  Fact_Feit_Monthly t  where t.montha in (&y)
+select max(t.montha) from fact_feit_monthly t 
 insert into new_feit_fact
 SELECT * FROM (
 WITH a AS (SELECT t.terminalserialid
