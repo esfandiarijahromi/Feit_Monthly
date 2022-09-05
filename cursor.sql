@@ -2,7 +2,7 @@
 /*
  x   >   '1401/4' 
 */
-delete Fact_Feit_Monthly t  where t.montha in (&x);
+delete Fact_Feit_Monthly t  where t.montha in (&z);
 
 DECLARE
    CURSOR feit_cursor IS SELECT * FROM fact_feit_contract;
