@@ -1,6 +1,6 @@
-// x > 1401/4 feit month
-// y > 1401/5 next month
-// delete  Fact_Feit_Monthly t  where t.montha in (&y)
+-- x > 1401/4 feit month
+-- y > 1401/5 next month
+ delete  Fact_Feit_Monthly t  where t.montha in (&y)
 
 insert into new_feit_fact
 SELECT * FROM (
